@@ -22,21 +22,21 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.json({ error: "User Already Exists" });
     return;
   }
-  console.log("process.env.JWT_SECRET--", process.env.JWT_SECRET);
+
   const token = jwt.sign(
     {
       email: user.email,
       id: user.id,
       time: Date.now(),
     },
-    process.env.JWT_SECRET || "secret-token-smdev",
+    process.env.JWT_SECRET,
     { expiresIn: "8h" }
   );
   res.setHeader(
     "Set-Cookie",
     cookie.serialize("SOURAV_ACCESS_TOKEN", token, {
       httpOnly: true,
-      maxAge: 8,
+      maxAge: 8 * 60 * 60,
       path: "/",
       sameSite: "lax",
       secure: process.env.NODE_ENV === "production",
