@@ -4,8 +4,7 @@ import prisma from "./prisma";
 
 export const validateRoute = (handler) => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
-    const token = req.headers.authorization;
-    console.log("req.headers.authorization", req.headers.authorization);
+    const token = req.cookies.SOURAV_ACCESS_TOKEN;
     if (token) {
       let user;
       try {
