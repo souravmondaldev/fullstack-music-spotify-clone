@@ -62,7 +62,7 @@ const SideBar = () => {
           <SideBarList menuList={musicMenu} />
         </Box>
         <Divider color="gray.700" />
-        <Box height="50%" overflowY="auto" marginY="20px">
+        <Box height="calc(100vh - 400px)" overflowY="auto" marginY="20px">
           <SideBarList menuList={playlist} playlist />
         </Box>
       </Box>
