@@ -14,7 +14,7 @@ const SideBarList = ({ menuList, playlist = false }) => {
         <ListItem
           paddingX="20px"
           fontSize="16px"
-          key={playlist ? menu : menu.name}
+          key={playlist ? menu.id : menu.name}
         >
           <LinkBox>
             <NextLink href={playlist ? "/" : menu.route}>
@@ -22,7 +22,7 @@ const SideBarList = ({ menuList, playlist = false }) => {
                 {!playlist && (
                   <ListIcon as={menu.icon} color="white" marginRight="20px" />
                 )}
-                {playlist ? menu : menu.name}
+                {playlist ? menu.name : menu.name}
               </LinkOverlay>
             </NextLink>
           </LinkBox>
