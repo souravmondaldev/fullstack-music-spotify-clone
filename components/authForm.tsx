@@ -29,22 +29,28 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
       </Flex>
       <Flex justify="center" align="center" height="calc(100vh - 100px)">
         <Box padding="50px" bg="gray.900" borderRadius="6px">
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            style={{ display : "block", textAlign : "center" }}
+          >
             <Input
-              placeholder="email"
+              placeholder="Email"
               type="email"
               onChange={(e) => setEmail(e.target.value)}
+              marginBottom="10px"
             />
             <Input
-              placeholder="password"
+              placeholder="Password"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
+              marginBottom="10px"
             />
             <Button
               type="submit"
               bg="green.500"
               isLoading={isLoading}
               sx={{ "&:hover": { bg: "green.300" } }}
+              textTransform="capitalize"
             >
               {mode}
             </Button>
