@@ -1,5 +1,3 @@
-import { Box, Flex, Text } from "@chakra-ui/layout";
-import { Image } from "@chakra-ui/react";
 import ArtistCard from "../components/artistCards";
 import GradientLayout from "../components/gradientLayout";
 import prisma from "../lib/prisma";
@@ -16,14 +14,14 @@ const Home = ({ artists }) => {
     >
       <ArtistCard
         artists={artists}
-        image="https://img.freepik.com/free-vector/cute-cat-yoga-pose-cartoon-illustration_138676-2791.jpg?w=2000"
+        image="https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg?w=2000"
         cardHeading="Top artists this month"
         cardSubheading="Top artists visible to you"
         cardType="Artist"
       />
       <ArtistCard
         artists={artists}
-        image="https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg?w=2000"
+        image="https://img.freepik.com/free-vector/cute-cat-yoga-pose-cartoon-illustration_138676-2791.jpg?w=2000"
         cardHeading="Top artists you may like"
         cardSubheading="According to your music preference"
         cardType="Artist"
@@ -34,7 +32,7 @@ const Home = ({ artists }) => {
 export default Home;
 export const getServerSideProps = async () => {
   const artists = await prisma.artist.findMany({});
-  console.log(artists);
+
   return {
     props: { artists },
   };
