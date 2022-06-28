@@ -30,7 +30,7 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
         <Box padding="50px" bg="gray.900" borderRadius="6px">
           <form
             onSubmit={handleSubmit}
-            style={{ display : "block", textAlign : "center" }}
+            style={{ display: "block", textAlign: "center" }}
           >
             <Input
               placeholder="Email"
